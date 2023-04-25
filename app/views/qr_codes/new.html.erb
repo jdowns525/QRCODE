@@ -28,6 +28,12 @@
 
     <%= form.label :job_description %>
     <%= form.text_field :job_description %><br/>
+
+    <%= form.label :github_link, "GitHub" %>
+    <%= form.url_field :github_link, placeholder: 'https://github.com/your_username' %><br/>
+
+    <%= form.label :personal_website_link, "Personal Website" %>
+    <%= form.url_field :personal_website_link, placeholder: 'https://yourpersonalwebsite.com' %><br/>
   </div>
 
   <div id="wifi_fields" style="display: none;">
