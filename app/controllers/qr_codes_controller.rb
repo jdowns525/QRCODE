@@ -2,6 +2,11 @@ class QRCodesController < ApplicationController
   require 'rqrcode'
   require 'rqrcode_svg'
 
+  def index
+    @qr_codes = QrCodeInfo.all
+  end
+  
+
   def new
     @qr_code_info = QrCodeInfo.new
   end
