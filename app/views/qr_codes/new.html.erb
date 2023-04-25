@@ -1,29 +1,54 @@
 <h1>Create QR Code</h1>
 
-<%= form_with url: qr_codes_path, method: :post, local: true do |form| %>
-  <%= form.label :first_name %>
-  <%= form.text_field :first_name %><br/>
+<%= form_with model: @qr_code_info, url: qr_codes_path, method: :post, local: true do |form| %>
+  <%= form.label :info_type, "Information Type" %>
+  <%= form.select :info_type, ['Business Card', 'Wi-Fi'], {}, onchange: "toggleFormFields(this.value);" %><br/><br/>
 
-  <%= form.label :last_name %>
-  <%= form.text_field :last_name %><br/>
+  <div id="business_card_fields">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %><br/>
 
-  <%= form.label :city %>
-  <%= form.text_field :city %><br/>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %><br/>
 
-  <%= form.label :address %>
-  <%= form.text_field :address %><br/>
+    <%= form.label :city %>
+    <%= form.text_field :city %><br/>
 
-  <%= form.label :zip %>
-  <%= form.text_field :zip %><br/>
+    <%= form.label :address %>
+    <%= form.text_field :address %><br/>
 
-  <%= form.label :state %>
-  <%= form.text_field :state %><br/>
+    <%= form.label :zip %>
+    <%= form.text_field :zip %><br/>
 
-  <%= form.label :job_place %>
-  <%= form.text_field :job_place %><br/>
+    <%= form.label :state %>
+    <%= form.text_field :state %><br/>
 
-  <%= form.label :job_description %>
-  <%= form.text_field :job_description %><br/>
+    <%= form.label :job_place %>
+    <%= form.text_field :job_place %><br/>
+
+    <%= form.label :job_description %>
+    <%= form.text_field :job_description %><br/>
+  </div>
+
+  <div id="wifi_fields" style="display: none;">
+    <%= form.label :wifi_ssid, "Wi-Fi SSID" %>
+    <%= form.text_field :wifi_ssid %><br/>
+
+    <%= form.label :wifi_password, "Wi-Fi Password" %>
+    <%= form.text_field :wifi_password %><br/>
+  </div>
 
   <%= form.submit 'Generate QR Code' %>
 <% end %>
+
+<script>
+  function toggleFormFields(infoType) {
+    if (infoType === 'Business Card') {
+      document.getElementById('business_card_fields').style.display = 'block';
+      document.getElementById('wifi_fields').style.display = 'none';
+    } else if (infoType === 'Wi-Fi') {
+      document.getElementById('business_card_fields').style.display = 'none';
+      document.getElementById('wifi_fields').style.display = 'block';
+    }
+  }
+</script>
