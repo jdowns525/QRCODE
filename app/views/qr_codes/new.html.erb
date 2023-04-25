@@ -1,0 +1,29 @@
+<h1>Create QR Code</h1>
+
+<%= form_with url: qr_codes_path, method: :post, local: true do |form| %>
+  <%= form.label :first_name %>
+  <%= form.text_field :first_name %><br/>
+
+  <%= form.label :last_name %>
+  <%= form.text_field :last_name %><br/>
+
+  <%= form.label :city %>
+  <%= form.text_field :city %><br/>
+
+  <%= form.label :address %>
+  <%= form.text_field :address %><br/>
+
+  <%= form.label :zip %>
+  <%= form.text_field :zip %><br/>
+
+  <%= form.label :state %>
+  <%= form.text_field :state %><br/>
+
+  <%= form.label :job_place %>
+  <%= form.text_field :job_place %><br/>
+
+  <%= form.label :job_description %>
+  <%= form.text_field :job_description %><br/>
+
+  <%= form.submit 'Generate QR Code' %>
+<% end %>
