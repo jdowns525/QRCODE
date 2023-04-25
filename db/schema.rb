@@ -10,6 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2023_04_25_154250) do
+
+  create_table "qr_code_infos", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "city"
+    t.string "address"
+    t.string "zip"
+    t.string "state"
+    t.string "job_place"
+    t.string "job_description"
+    t.string "wifi_ssid"
+    t.string "wifi_password"
+    t.string "info_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end

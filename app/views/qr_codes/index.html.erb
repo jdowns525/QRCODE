@@ -1,0 +1,30 @@
+<h1>All QR Codes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>Address</th>
+      <th>ZIP</th>
+      <th>State</th>
+      <th>Job Place</th>
+      <th>Job Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @qr_codes.each do |qr_code| %>
+      <tr>
+        <td><%= qr_code.first_name %> <%= qr_code.last_name %></td>
+        <td><%= qr_code.city %></td>
+        <td><%= qr_code.address %></td>
+        <td><%= qr_code.zip %></td>
+        <td><%= qr_code.state %></td>
+        <td><%= qr_code.job_place %></td>
+        <td><%= qr_code.job_description %></td>
+        <td><%= link_to 'Show', qr_code_path(qr_code) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

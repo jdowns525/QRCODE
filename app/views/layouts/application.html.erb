@@ -16,6 +16,13 @@
   </head>
 
   <body>
+  <nav>
+  <ul>
+    <li><%= link_to 'Create QR Code', new_qr_code_path %></li>
+    <li><%= link_to 'All QR Codes', qr_codes_path %></li>
+  </ul>
+  </nav>
+
     <%= yield %>
   </body>
 </html>
