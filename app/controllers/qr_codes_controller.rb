@@ -6,7 +6,6 @@ class QrCodesController < ApplicationController
     @qr_codes = QrCodeInfo.all
   end
   
-
   def new
     @qr_code_info = QrCodeInfo.new
   end
