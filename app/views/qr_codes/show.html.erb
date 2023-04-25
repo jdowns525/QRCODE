@@ -1,5 +1,10 @@
 <h1>QR Code Information</h1>
 
+<!-- Add the generated QR code -->
+<div>
+  <%= raw generate_qr_code_svg(@qr_code_info) %>
+</div>
+
 <p>
   <strong>Name:</strong>
   <%= @qr_code_info.first_name %> <%= @qr_code_info.last_name %>
