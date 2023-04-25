@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_25_162135) do
+ActiveRecord::Schema.define(version: 2023_04_25_164822) do
 
   create_table "qr_code_infos", force: :cascade do |t|
     t.string "first_name"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2023_04_25_162135) do
     t.string "info_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "github_link"
+    t.string "personal_website_link"
   end
 
 end

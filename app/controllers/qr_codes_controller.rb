@@ -29,6 +29,7 @@ class QrCodesController < ApplicationController
   private
 
   def qr_code_info_params
-    params.require(:qr_code_info).permit(:first_name, :last_name, :city, :address, :zip, :state, :job_place, :job_description, :wifi_ssid, :wifi_password, :info_type)
+    params.require(:qr_code_info).permit(:first_name, :last_name, :city, :address, :zip, :state, :job_place, :job_description, :wifi_ssid, :wifi_password, :info_type, :github_link, :personal_website_link)
   end
+  
 end
