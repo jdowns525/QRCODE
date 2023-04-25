@@ -1,4 +1,4 @@
-class QRCodesController < ApplicationController
+class QrCodesController < ApplicationController
   require 'rqrcode'
   require 'rqrcode_svg'
 
