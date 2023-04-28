@@ -13,6 +13,7 @@
 #  last_name             :string
 #  personal_website_link :string
 #  state                 :string
+#  summary               :string
 #  wifi_password         :string
 #  wifi_ssid             :string
 #  zip                   :string
